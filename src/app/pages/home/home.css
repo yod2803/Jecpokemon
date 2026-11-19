@@ -1,0 +1,126 @@
+.container {
+  max-width: 520px;
+  margin: 32px auto;
+  padding: 0 16px;
+  font-family: system-ui, -apple-system, sans-serif;
+  text-align: center;
+  color: #1e293b;
+}
+
+h1 {
+  margin-bottom: 16px;
+  color: #dc2626;
+}
+
+.card {
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 16px;
+  padding: 24px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.06);
+}
+
+.poke-img {
+  width: 150px;
+  height: 150px;
+  object-fit: contain;
+}
+
+h2 {
+  margin: 8px 0;
+  font-size: 1.35rem;
+}
+
+.info {
+  height: 182px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #64748b;
+  margin: 0;
+}
+
+.status {
+  margin: 12px 0 18px;
+  font-weight: 600;
+  color: #334155;
+}
+
+.actions {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+}
+
+.btn {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 10px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  cursor: pointer;
+  color: #fff;
+}
+
+.btn:disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+}
+
+.btn.catch {
+  background: #ef4444;
+}
+
+.btn.catch:hover:not(:disabled) {
+  background: #dc2626;
+}
+
+.btn.next {
+  background: #475569;
+}
+
+.btn.next:hover:not(:disabled) {
+  background: #334155;
+}
+
+.bag {
+  margin-top: 24px;
+  text-align: left;
+}
+
+.bag h3 {
+  margin-bottom: 10px;
+  font-size: 1rem;
+}
+
+.empty {
+  color: #64748b;
+  font-size: 0.9rem;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+  gap: 10px;
+}
+
+.mini-card {
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  border-radius: 12px;
+  padding: 8px;
+  text-align: center;
+}
+
+.mini-card img {
+  width: 64px;
+  height: 64px;
+  object-fit: contain;
+  display: block;
+  margin: 0 auto 4px;
+}
+
+.mini-card span {
+  font-size: 0.75rem;
+  font-weight: 700;
+}

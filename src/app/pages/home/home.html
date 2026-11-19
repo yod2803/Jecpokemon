@@ -1,0 +1,38 @@
+<div class="container">
+  <div class="top-bar">
+    <h1>จับโปเกมอน</h1>
+    <button class="btn-bag" (click)="goToCaughtPage()">
+      ดูรายการที่จับได้ ({{ bag.caughtList().length }}) →
+    </button>
+  </div>
+
+  <div class="card">
+    @if (isLoading()) {
+      <p class="info">กำลังค้นหา...</p>
+    } @else if (wildPokemon(); as poke) {
+      <img [src]="poke.sprite" [alt]="poke.name" class="poke-img" />
+      <h2>{{ poke.name | uppercase }}</h2>
+    } @else {
+      <p class="info">กำลังหาตัวใหม่...</p>
+    }
+
+    <p class="status">{{ message() }}</p>
+
+    <div class="actions">
+      <button
+        class="btn catch"
+        [disabled]="!wildPokemon() || isCatching() || isLoading()"
+        (click)="catchPokemon()"
+      >
+        จับโปเกมอน
+      </button>
+      <button
+        class="btn next"
+        [disabled]="isCatching() || isLoading()"
+        (click)="findPokemon()"
+      >
+        หาตัวใหม่
+      </button>
+    </div>
+  </div>
+</div>

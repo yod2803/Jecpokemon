@@ -1,0 +1,28 @@
+<div class="container">
+  <div class="top-nav">
+    <h1>โปเกมอนที่จับได้ ({{ pokemonList().length }})</h1>
+    <a routerLink="/" class="nav-link">← กลับไปจับเพิ่ม</a>
+  </div>
+
+  @if (pokemonList().length === 0) {
+    <div class="empty-box">
+      <p>ยังไม่มีโปเกมอนที่จับได้</p>
+      <a routerLink="/" class="btn-go">ไปหน้าจับโปเกมอน</a>
+    </div>
+  } @else {
+    <div class="toolbar">
+      <button class="btn-clear" (click)="clearAll()">ปล่อยทั้งหมด</button>
+    </div>
+
+    <div class="grid">
+      @for (item of pokemonList(); track $index) {
+        <div class="card">
+          <span class="dex">#{{ item.id.toString().padStart(3, '0') }}</span>
+          <img [src]="item.sprite" [alt]="item.name" />
+          <div class="name">{{ item.name | uppercase }}</div>
+          <button class="btn-release" (click)="releasePokemon($index)">ปล่อย</button>
+        </div>
+      }
+    </div>
+  }
+</div>
